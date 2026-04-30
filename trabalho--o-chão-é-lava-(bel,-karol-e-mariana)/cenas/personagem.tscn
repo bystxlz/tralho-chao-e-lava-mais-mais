@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://couotx0jmoixd"]
+
+[ext_resource type="Script" uid="uid://da2nu01pt85mp" path="res://cenas/personagem.gd" id="1_5h1iu"]
+[ext_resource type="Texture2D" uid="uid://c3aiw58hw0c78" path="res://assets/New Piskel(1).png" id="2_5h1iu"]
+[ext_resource type="Texture2D" uid="uid://blpeqeg6c2nd3" path="res://assets/New Piskel.png" id="2_fgfoh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyg5f"]
+atlas = ExtResource("2_fgfoh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6r7t"]
+atlas = ExtResource("2_fgfoh")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d05dr"]
+atlas = ExtResource("2_fgfoh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foddy"]
+atlas = ExtResource("2_5h1iu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o8vf"]
+atlas = ExtResource("2_5h1iu")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbten"]
+atlas = ExtResource("2_5h1iu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d05dr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyg5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6r7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d05dr")
+}],
+"loop": true,
+"name": &"direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foddy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o8vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbten")
+}],
+"loop": true,
+"name": &"esquerda",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h1iu"]
+size = Vector2(67.75, 51.5)
+
+[node name="Personagem" type="CharacterBody2D" unique_id=1132832586]
+script = ExtResource("1_5h1iu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=918214694]
+texture_filter = 1
+position = Vector2(20, 17)
+scale = Vector2(2.25, 2.0625)
+sprite_frames = SubResource("SpriteFrames_d05dr")
+animation = &"esquerda"
+frame_progress = 0.6237183
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1798472436]
+position = Vector2(17, 21)
+shape = SubResource("RectangleShape2D_5h1iu")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=379968245]
+scale = Vector2(8.694492, -20.18766)

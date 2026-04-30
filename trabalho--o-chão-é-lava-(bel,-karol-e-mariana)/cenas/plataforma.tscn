@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cg0gywxd1itiw"]
+
+[ext_resource type="Texture2D" uid="uid://dgkw5i470yg7u" path="res://assets/png-clipart-pixel-art-tile-based-video-game-2d-platform-game-angle-thumbnail-removebg-preview.png" id="1_2j2j3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7h5w"]
+size = Vector2(220, 59)
+
+[node name="Node2D" type="StaticBody2D" unique_id=1354379471]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=470064803]
+texture = ExtResource("1_2j2j3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=585485143]
+position = Vector2(11, -0.5)
+shape = SubResource("RectangleShape2D_m7h5w")
