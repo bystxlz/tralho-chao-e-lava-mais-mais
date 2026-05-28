@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://f8x6cnexmp1x"]
+
+[ext_resource type="Script" uid="uid://cgn5vxmw5muqd" path="res://scripts/comida.gd" id="1_25u8n"]
+[ext_resource type="Texture2D" uid="uid://ifsm7fh4hqqa" path="res://assets/arte-de-pixel-de-fast-food_553915-40-removebg-preview.png" id="1_p1ioc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_25u8n"]
+radius = 46.09772
+
+[node name="Area2D" type="Area2D" unique_id=656365168]
+scale = Vector2(0.35, 0.35)
+collision_mask = 8
+script = ExtResource("1_25u8n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=173730796]
+texture_filter = 1
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_p1ioc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1208059629]
+shape = SubResource("CircleShape2D_25u8n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

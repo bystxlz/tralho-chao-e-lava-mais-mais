@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://couotx0jmoixd"]
 
-[ext_resource type="Script" uid="uid://da2nu01pt85mp" path="res://cenas/personagem.gd" id="1_5h1iu"]
+[ext_resource type="Script" uid="uid://da2nu01pt85mp" path="res://scripts/personagem.gd" id="1_5h1iu"]
 [ext_resource type="Texture2D" uid="uid://byfkshe8igypu" path="res://assets/New Piskel.png" id="2_fgfoh"]
 [ext_resource type="Texture2D" uid="uid://cxhilk0lfi8o5" path="res://assets/New Piskel (2).png" id="3_fgfoh"]
 
@@ -15,6 +15,10 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_tyg5f"]
 atlas = ExtResource("2_fgfoh")
 region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d05dr"]
+atlas = ExtResource("3_fgfoh")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6r7t"]
 atlas = ExtResource("3_fgfoh")
@@ -38,9 +42,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c6r7t")
+"texture": SubResource("AtlasTexture_d05dr")
 }],
 "loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6r7t")
+}],
+"loop": false,
 "name": &"pular",
 "speed": 5.0
 }]
@@ -52,6 +64,7 @@ size = Vector2(67.75, 51.5)
 size = Vector2(68, 52)
 
 [node name="Personagem" type="CharacterBody2D" unique_id=1132832586]
+collision_layer = 8
 script = ExtResource("1_5h1iu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=918214694]
@@ -59,7 +72,8 @@ texture_filter = 1
 position = Vector2(20, 17)
 scale = Vector2(2.25, 2.0625)
 sprite_frames = SubResource("SpriteFrames_d05dr")
-animation = &"pular"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1798472436]
 position = Vector2(17, 21)
