@@ -5,16 +5,17 @@
 [ext_resource type="Script" uid="uid://b15baev41ny31" path="res://scripts/area_2d.gd" id="3_h2xru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2xru"]
-size = Vector2(438.5, 913)
+size = Vector2(438.5, 1161)
 
 [node name="lava main" type="Node2D" unique_id=1081978525]
+z_index = 5
 script = ExtResource("1_8ivsm")
 
 [node name="lava" type="Sprite2D" parent="." unique_id=1070104419]
 texture_filter = 1
-position = Vector2(-308.85397, 244.05786)
+position = Vector2(-307.66232, 380.60632)
 rotation = 1.5620697
-scale = Vector2(1.2045937, 3.6362526)
+scale = Vector2(1.5376514, 3.6362526)
 texture = ExtResource("2_h2xru")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1052536002]
@@ -23,7 +24,7 @@ collision_mask = 8
 script = ExtResource("3_h2xru")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=878836471]
-position = Vector2(-220.75, 252.5)
+position = Vector2(-220.75, 376.5)
 shape = SubResource("RectangleShape2D_h2xru")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

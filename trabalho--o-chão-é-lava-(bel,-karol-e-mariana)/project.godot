@@ -39,4 +39,3 @@ esquerda={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-environment/defaults/default_clear_color=Color(0.49376428, 0.00024657385, 0.51827145, 1)
